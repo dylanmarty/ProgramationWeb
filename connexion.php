@@ -11,11 +11,14 @@ $conn = new PDO("mysql:host=$host;dbname=$base_name", $username, $password);
 
 if (isset($_POST['valider'])) {
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
-        $email = $_POST['email'];
-        $mdp = $_POST['password'];
+
+        $email = htmlspecialchars($_POST['email']);
+        $mdp = sha1($_POST['password']);
+
         $req = $conn->prepare("SELECT * from users where email=? AND password=?");
         $req->execute(array($email, $mdp));
         $cmpt = $req->rowCount();
+
         if ($cmpt == 1) {
             $message = "Votre compte a bien été trouvé";
         } else {
@@ -39,6 +42,8 @@ $conn = null;
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' type='text/css' media='screen' href='css/connexion.css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
 
     </head>
@@ -50,7 +55,7 @@ $conn = null;
                     <h2 class="text-center"> Connexion</h2>
                     <p class="text-center text-muted lead"> Se connecter à WWW </p>
 
-                    <form action="">
+                    <form action="" method="POST">
                         <div class="input-group  mb-3">
                             <span class="input-group-text">
                                 <i class="fa fa-envelope">
@@ -67,7 +72,7 @@ $conn = null;
                             <input type="password" class="form-control" placeholder="Mot de passe " name="password">
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-success" name="valider">Se connecter</button>
+                            <button type="buton" class="btn btn-success" name="valider">Se connecter</button>
                             <p class="text-center">
                                 <i style="color: red">
                                     <?php
