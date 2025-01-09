@@ -9,16 +9,11 @@
 </head>
 
 <body>
-  <!-- Menu de navigation -->
-  <header class="navbar">
-    <h1>Nom du Site</h1>
-    <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="#jeux">Jeux</a></li>
-      <li><a href="#scores">Meilleurs Scores</a></li>
-      <li><a href="connexion.php">Connexion / Inscription</a></li>
-    </ul>
-  </header>
+
+<?php
+include 'BarreNavigation.html';
+?>
+
 
   <!-- Section Accueil -->
   <section id="accueil" class="section">
