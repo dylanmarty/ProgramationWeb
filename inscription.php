@@ -1,33 +1,35 @@
 <?php
 
-/*
-//Mise en relation de la base de donnée:
-$host = "localhost";
-$username = "root";
-$password = "";
-$base_name = "jeux_videos";
+include 'ConfigBaseDonnees.php';
 
 //connexion base de données:
-$connexion = new PDO("mysql:host=$host;dbname=$base_name", $username, $password);
+// Connexion à la base de données
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Vérifier si la connexion est réussie
+if ($conn->connect_error) {
+    die("Échec de connexion à la base de données : " . $conn->connect_error);
+}
 
 if (isset($_POST['valider'])) {
-    if (!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['email']) and !empty($_POST['password'])) {
-        $nom = htmlspecialchars($_POST['nom']);
-        $prenom = htmlspecialchars($_POST['prenom']);
-        $email = htmlspecialchars($_POST['email']);
-        $mdp = sha1($_POST['password']);
+    if (!empty($_POST['Nom']) and !empty($_POST['Prenom']) and !empty($_POST['Email']) and !empty($_POST['MotDePasse'])) {
+        $nom = $_POST['Nom'];
+        $prenom = $_POST['Prenom'];
+        $email = $_POST['Email'];
+        $mdp = $_POST['MotDePasse'];
 
         if (strlen($nom) > 50 || strlen($prenom) > 50) {
-            $message = "Entrer un nom ou un prenom plus court";
+            $message = "Entrer un Nom ou un Prenom plus court";
         } else {
-            $testemail = $connexion->prepare("SELECT * FROM users WHERE email=?");
-            $testemail->execute(array($email));
+            $testemail = $conn->prepare("SELECT * FROM Utilisateurs WHERE Email=?");
+            $testemail->bind_param("s",$email);
+            $testemail->execute();
+            $testemail->store_result();
 
-            $controlemail = $testemail->rowCount();
-
-            if ($controlemail == 0) {
-                $insertion = $connexion->prepare("INSERT INTO users(nom,prenom,email,password) VALUES(?,?,?,?)");
-                $insertion->execute(array($nom, $prenom, $email, $mdp));
+            if ($testemail->num_rows == 0) {
+                $insertion = $conn->prepare("INSERT INTO Utilisateurs(Nom,Prenom,Email,MotDePasse) VALUES(?,?,?,?)");
+                $insertion->bind_param("ssss",$nom, $prenom, $email, $mdp);
+                $insertion->execute();
                 $message = "Votre compte a bien été crée";
             } else {
                 echo "Désolé mais cette adresse est associé à un compte existant";
@@ -39,7 +41,7 @@ if (isset($_POST['valider'])) {
 }
 
 $connexion = null;
-*/
+
 
 ?>
 <!DOCTYPE html>
@@ -69,28 +71,28 @@ $connexion = null;
                             <i class="fa fa-user">
                             </i>
                         </span>
-                        <input type="text" class="form-control" name="nom" placeholder="Nom ">
+                        <input type="text" class="form-control" name="Nom" placeholder="Nom ">
                     </div>
                     <div class="input-group  mb-3">
                         <span class="input-group-text">
                             <i class="fa fa-user">
                             </i>
                         </span>
-                        <input type="text" class="form-control" name="prenom" placeholder="Prénom ">
+                        <input type="text" class="form-control" name="Prenom" placeholder="Prénom ">
                     </div>
                     <div class="input-group  mb-3">
                         <span class="input-group-text">
                             <i class="fa fa-envelope">
                             </i>
                         </span>
-                        <input type="text" class="form-control" name="email" placeholder="Email ">
+                        <input type="text" class="form-control" name="Email" placeholder="Email ">
                     </div>
                     <div class="input-group  mb-3">
                         <span class="input-group-text">
                             <i class="fa fa-lock">
                             </i>
                         </span>
-                        <input type="text" class="form-control" name="password" placeholder="Mot de passe ">
+                        <input type="text" class="form-control" name="MotDePasse" placeholder="Mot de passe ">
                     </div>
                     <div class="d-grid">
                         <button type="buton" name="valider" class="btn btn-success">S’inscrire</button>

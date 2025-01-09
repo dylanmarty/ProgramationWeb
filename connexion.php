@@ -17,7 +17,6 @@ if (isset($_POST['valider'])) {
 
         $email = $_POST['Email'];
         $mdp = $_POST['MotDePasse'];
-        echo ''. $email .''. $mdp .'';
 
         $req = $conn->prepare("SELECT * from Utilisateurs where Email=? AND MotDePasse=?");
         $req->bind_param("ss",$email, $mdp);
