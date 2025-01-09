@@ -2,26 +2,29 @@
 
 include 'ConfigBaseDonnees.php';
 
+
 // Connexion à la base de données
 $conn = new mysqli($host, $username, $password, $dbname);
 
 // Vérifier si la connexion est réussie
 if ($conn->connect_error) {
-    alert("Échec de connexion à la base de données : " . $conn->connect_error);
+    die("Échec de connexion à la base de données : " . $conn->connect_error);
 }
 
-/*
+
 if (isset($_POST['valider'])) {
-    if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    if (!empty($_POST['Email']) && !empty($_POST['MotDePasse'])) {
 
-        $email = htmlspecialchars($_POST['email']);
-        $mdp = sha1($_POST['password']);
+        $email = $_POST['Email'];
+        $mdp = $_POST['MotDePasse'];
+        echo ''. $email .''. $mdp .'';
 
-        $req = $conn->prepare("SELECT * from users where email=? AND password=?");
-        $req->execute(array($email, $mdp));
-        $cmpt = $req->rowCount();
+        $req = $conn->prepare("SELECT * from Utilisateurs where Email=? AND MotDePasse=?");
+        $req->bind_param("ss",$email, $mdp);
+        $req->execute();
+        $req->store_result();
 
-        if ($cmpt == 1) {
+        if ($req->num_rows > 0) {
             $message = "Votre compte a bien été trouvé";
         } else {
             $message = "Désolé nous ne trouvons pas votre compte";
@@ -32,7 +35,7 @@ if (isset($_POST['valider'])) {
 }
 
 $conn = null;
-*/
+
 
 ?>
 
@@ -68,7 +71,7 @@ $conn = null;
                                 <i class="fa fa-envelope">
                                 </i>
                             </span>
-                            <input type="text" class="form-control" placeholder="Adresse e-mail  " name="email">
+                            <input type="text" class="form-control" placeholder="Adresse e-mail  " name="Email">
                         </div>
 
                         <div class="input-group  mb-3">
@@ -76,7 +79,7 @@ $conn = null;
                                 <i class="fa fa-lock">
                                 </i>
                             </span>
-                            <input type="password" class="form-control" placeholder="Mot de passe " name="password">
+                            <input type="MotDePasse" class="form-control" placeholder="Mot de passe " name="MotDePasse">
                         </div>
                         <div class="d-grid">
                             <button type="buton" class="btn btn-success" name="valider">Se connecter</button>
@@ -90,7 +93,7 @@ $conn = null;
                                 </i>
                             </p>
                             <p class="text-center">
-                                Vous n'avez pas de compte ?<a href="index.html"> Inscription </a>
+                                Vous n'avez pas de compte ?<a href="inscription.php"> Inscription </a>
                             </p>
                         </div>
                     </form>
