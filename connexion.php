@@ -1,5 +1,6 @@
 <?php
 
+/*
 //Mise en relation de la base de donnée:
 $host = "localhost";
 $username = "root";
@@ -30,7 +31,12 @@ if (isset($_POST['valider'])) {
 }
 
 $conn = null;
+*/
+
 ?>
+
+
+
 <!DOC
     <!DOCTYPE html>
     <html lang="fr">
