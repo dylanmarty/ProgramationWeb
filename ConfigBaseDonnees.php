@@ -10,9 +10,7 @@ $conn = new mysqli($host, $username, $password, $dbname);
 
 // Vérifier si la connexion est réussie
 if ($conn->connect_error) {
-    die("Échec de connexion à la base de données : " . $conn->connect_error);
-}else{
-    Echo 'Victoire, connexion a la base de données reussi' ;
+    alert("Échec de connexion à la base de données : " . $conn->connect_error);
 }
 
 ?> 
