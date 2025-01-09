@@ -64,28 +64,6 @@ INSERT INTO `MeilleursScores` (`ID`, `AttrapeEtoile`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateurs_site_TP`
---
-
-CREATE TABLE `utilisateurs_site_TP` (
-  `login` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `nom` varchar(50) NOT NULL,
-  `prenom` varchar(50) NOT NULL,
-  `mail` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `utilisateurs_site_TP`
---
-
-INSERT INTO `utilisateurs_site_TP` (`login`, `password`, `nom`, `prenom`, `mail`) VALUES
-('chRoy', 'password1', 'Roy', 'Charles', 'charles.roy@gmail.com'),
-('ClarkBest', 'password2', 'Wayne', 'Bruce', 'batman.robin@wayne.co'),
-('TomOlive', 'password3', 'Dupont', 'Edgard', 'yugi.sacha@wanadoo.fr'),
-('WhatsUp', 'password4', 'Rogers', 'Shaggy', 'scooby.doo@mystery.mach');
-
---
 -- Index pour les tables déchargées
 --
 
@@ -101,12 +79,6 @@ ALTER TABLE `Utilisateurs`
 ALTER TABLE `MeilleursScores`
   ADD PRIMARY KEY (`ID`);
 
---
--- Index pour la table `utilisateurs_site_TP`
---
-ALTER TABLE `utilisateurs_site_TP`
-  ADD PRIMARY KEY (`login`),
-  ADD UNIQUE KEY `mail` (`mail`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées

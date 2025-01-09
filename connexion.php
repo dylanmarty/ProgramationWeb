@@ -1,15 +1,16 @@
 <?php
 
+include 'ConfigBaseDonnees.php';
+
+// Connexion à la base de données
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Vérifier si la connexion est réussie
+if ($conn->connect_error) {
+    alert("Échec de connexion à la base de données : " . $conn->connect_error);
+}
+
 /*
-//Mise en relation de la base de donnée:
-$host = "localhost";
-$username = "root";
-$password = "";
-$base_name = "jeux_videos";
-
-//connexion base de données:
-$conn = new PDO("mysql:host=$host;dbname=$base_name", $username, $password);
-
 if (isset($_POST['valider'])) {
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
