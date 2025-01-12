@@ -22,7 +22,7 @@
     let $tempsIntervalle = 1500
     let $idIntervalle
 
-    function mettreAJourTableau() {
+    function mettreAJourTableau() { 
       $scoreDisplay.textContent = $score
       $livesDisplay.textContent = $vies
       $scoreDisplay.classList.add("score-change")
