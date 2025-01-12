@@ -58,7 +58,7 @@ $connexion = null;
 
 
     <?php
-        include 'BarreNavigation.html';
+        include 'BarreNavigation.php';
     ?>
 </head>
 

@@ -1,67 +1,77 @@
+/* Style général du corps */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  /* Style du menu */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-    color: white;
-  }
+/* Style de la barre de navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: white;
+}
 
-  .navbar h1 {
-    margin: 0;
-    font-size: 24px;
-  }
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+}
 
-  .nav-links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+/* Style des liens de navigation */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .nav-links li {
-    margin: 0 10px;
-  }
+.nav-links li {
+  margin: 0 10px;
+}
 
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-  }
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
 
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
+.nav-links a:hover {
+  text-decoration: underline;
+}
 
-  .section {
-    text-align: center;
-    padding: 50px 20px;
-  }
+/* Style des sections */
+.section {
+  text-align: center;
+  padding: 50px 20px;
+}
 
-  .section h2 {
-    font-size: 28px;
-    color: #333;
-  }
+.section h2 {
+  font-size: 28px;
+  color: #333;
+}
 
-  .btn {
-    display: inline-block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
+/* Style des boutons */
+.btn {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
-  .btn:hover {
-    background-color: #0056b3;
-  }
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Style pour le menu déroulant */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
