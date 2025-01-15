@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
-    <link rel="stylesheet" href="css/Memoire carte.css">
+    <link rel="stylesheet" href="css/Memoire_carte.css">
 </head>
+
 <body>
     <div id="game-info">
         <div id="timer">Temps restant : 50s</div>
         <div id="score">Score : 0</div>
-    </div>
-    <div id="game-board">
-        <div class="card" data-card="img/operateur.png"></div>
-        <div class="card" data-card="img/grue.png"></div>
-        <div class="card" data-card="img/t-shirt.png"></div>
-        <div class="card" data-card="img/journee-mondiale.png"></div>
-        <div class="card" data-card="img/operateur.png"></div>
-        <div class="card" data-card="img/grue.png"></div>
-        <div class="card" data-card="img/t-shirt.png"></div>
-        <div class="card" data-card="img/journee-mondiale.png"></div>
-        
-    </div>
-    
-    <script>
+        <div id="game-board">
+            <div class="card" data-card="img/operateur.png"></div>
+            <div class="card" data-card="img/grue.png"></div>
+            <div class="card" data-card="img/t-shirt.png"></div>
+            <div class="card" data-card="img/journee-mondiale.png"></div>
+            <div class="card" data-card="img/operateur.png"></div>
+            <div class="card" data-card="img/grue.png"></div>
+            <div class="card" data-card="img/t-shirt.png"></div>
+            <div class="card" data-card="img/journee-mondiale.png"></div>
+            <div class="card" data-card="img/feu.png"></div>
+            <div class="card" data-card="img/monde.png"></div>
+            <div class="card" data-card="img/montagne.png"></div>
+            <div class="card" data-card="img/montgolfiere.png"></div>
+            <div class="card" data-card="img/feu.png"></div>
+            <div class="card" data-card="img/monde.png"></div>
+            <div class="card" data-card="img/montagne.png"></div>
+            <div class="card" data-card="img/montgolfiere.png"></div>
+        </div>
+
+        <script>
             const cards = document.querySelectorAll('.card');
             const timerDisplay = document.getElementById('timer');
             const scoreDisplay = document.getElementById('score');
@@ -31,8 +39,7 @@
             let flippedCards = [];
             let matchedCards = [];
             let attempts = 0;
-            let timer = 50;  // 50 secondes
-            let gameInterval;
+            let timer = 50; // 50 secondes
             let timerInterval;
 
             // Fonction pour démarrer le timer
@@ -45,22 +52,22 @@
                         clearInterval(timerInterval);
                         endGame();
                     }
-                }, 1000);  // Décrémenter toutes les secondes
+                }, 1000); // Décrémenter toutes les secondes
             }
 
             // Fonction pour terminer le jeu
             function endGame() {
                 alert(`Temps écoulé ! Vous avez trouvé ${matchedCards.length / 2} paires.`);
                 setTimeout(() => {
-                    location.reload();  // Recharge la page pour recommencer le jeu
+                    location.reload(); // Recharge la page pour recommencer le jeu
                 }, 1000);
             }
 
             function flipCard() {
-                if (flippedCards.length === 2) return; // On ne peut retourner que deux cartes à la fois
+                if (flippedCards.length === 2) return;
 
                 const card = this;
-                const cardImage = card.dataset.card;  // Utiliser card.dataset.card pour récupérer l'attribut 'data-card'
+                const cardImage = card.dataset.card;
                 card.classList.add('flipped');
                 card.style.backgroundImage = `url('${cardImage}')`;
 
@@ -78,7 +85,7 @@
                 if (firstCard.dataset.card === secondCard.dataset.card) {
                     // Si les cartes correspondent
                     matchedCards.push(firstCard, secondCard);
-                    scoreDisplay.textContent = `Score : ${matchedCards.length / 2}`;  // Mise à jour du score
+                    scoreDisplay.textContent = `Score : ${matchedCards.length / 2}`; // Mise à jour du score
                     flippedCards = [];
                     if (matchedCards.length === cards.length) {
                         setTimeout(() => alert(`Félicitations ! Vous avez trouvé toutes les paires en ${attempts} tentatives !`), 500);
@@ -87,6 +94,8 @@
                     // Si les cartes ne correspondent pas
                     firstCard.classList.remove('flipped');
                     secondCard.classList.remove('flipped');
+                    firstCard.style.backgroundImage = '';
+                    secondCard.style.backgroundImage = '';
                     flippedCards = [];
                 }
             }
@@ -106,6 +115,7 @@
 
             // Démarrer le timer au début du jeu
             startTimer();
-    </script>
+        </script>
 </body>
+
 </html>
