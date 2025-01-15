@@ -1,9 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
 
 .navbar {
   display: flex;
@@ -40,14 +44,56 @@ body {
   text-decoration: underline;
 }
 
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+
 .section {
+
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
   text-align: center;
-  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .section h2 {
   font-size: 28px;
   color: #333;
+}
+
+h3,
+p,
+a {
+  text-align: center;
 }
 
 .btn {
@@ -69,4 +115,71 @@ body {
 .dropdown {
   position: relative;
   display: inline-block;
+}
+
+#carousel {
+  display: flex;
+  align-items: center;
+}
+
+#carousel-content {
+  display: flex;
+  overflow: hidden;
+  width: 300px;
+  height: 400px;
+  position: relative;
+}
+
+.carousel-item {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#prev,
+#next {
+  background-color: #ccc;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+#prev:hover,
+#next:hover {
+  background-color: #bbb;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
