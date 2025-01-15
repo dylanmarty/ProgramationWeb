@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    background-color: #222;
+  }
+  #pong {
+    border: 2px solid white;
+  }
+  .scoreboard {
+    color: white;
+  }
+  #replayButton {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(85, 85, 231);
+  }

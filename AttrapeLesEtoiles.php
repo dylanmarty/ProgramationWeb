@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="CSS/AttrapeLesEtoiles.css" rel="stylesheet">
+  <link href="css/AttrapeLesEtoiles.css" rel="stylesheet">
   <title>Attrape les Étoiles</title>
+  <?php include 'BarreNavigation.php'; ?>
 </head>
+
 <body>
   <div class="scoreboard">
     Score : <span id="score">0</span> | Vies : <span id="lives">3</span>

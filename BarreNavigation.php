@@ -12,14 +12,14 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="CSS/style.css" rel="stylesheet">
-  <title>Nom du Site</title>
+  <link href="css/style.css" rel="stylesheet">
+  <title>ENSIMgames</title>
 </head>
 
 <body>
     <!-- Menu de navigation -->
     <header class="navbar">
-      <h1>Nom du Site</h1>
+      <h1>ENSIMgames</h1>
       <ul class="nav-links">
         <li><a href="index.php">Accueil</a></li>
          <!-- Menu déroulant pour les jeux -->

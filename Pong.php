@@ -3,44 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeu de Pong</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #222;
-    }
-    canvas {
-      border: 2px solid white;
-    }
-    .scoreboard {
-      position: absolute;
-      top: 20px;
-      font-size: 24px;
-      color: white;
-    }
-    #replayButton {
-      display: none;
-      position: absolute;
-      bottom: 20px;
-      padding: 10px 20px;
-      font-size: 18px;
-      background-color: #0095DD;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    #replayButton:hover {
-      background-color: #007acc;
-    }
-  </style>
+  <link href="css/Pong.css" rel="stylesheet">
+  <title>Jeu du Pong</title>
+  <?php include 'BarreNavigation.php'; ?>
 </head>
-<body>
 
+<body>
   <div class="scoreboard">
     Score : <span id="score">0</span>
   </div>
@@ -62,7 +30,7 @@
     let ballSpeedX = 4, ballSpeedY = -4;
     let score = 0;
 
-    // Gestion des événements de clavier
+    // Gestion des événements du clavier
     document.addEventListener('keydown', keyDownHandler, false);
     document.addEventListener('keyup', keyUpHandler, false);
 
