@@ -1,7 +1,7 @@
 <?php
 // Vérifiez si la session est déjà démarrée
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
+  session_start();
 }
 ?>
 
@@ -17,12 +17,12 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 
 <body>
-    <!-- Menu de navigation -->
-    <header class="navbar">
-      <h1>ENSIMgames</h1>
-      <ul class="nav-links">
-        <li><a href="index.php">Accueil</a></li>
-         <!-- Menu déroulant pour les jeux -->
+  <!-- Menu de navigation -->
+  <header class="navbar">
+    <h1>ENSIMgames</h1>
+    <ul class="nav-links">
+      <li><a href="index.php">Accueil</a></li>
+      <!-- Menu déroulant pour les jeux -->
       <li class="dropdown">
         <a href="#" class="dropbtn">Jeux</a>
         <div class="dropdown-content">
@@ -30,19 +30,19 @@ if (session_status() == PHP_SESSION_NONE) {
           <a href="Pong.php">Pong</a>
         </div>
       </li>
-        <li><a href="#scores">Meilleurs Scores</a></li>
+      <li><a href="Meilleur_score.php">Meilleurs Scores</a></li>
 
-        <?php if (isset($_SESSION['Nom']) && isset($_SESSION['Prenom'])): ?>
-          <!-- Si l'utilisateur est connecté -->
-          <li><a href="#">Bienvenue, <?php echo $_SESSION['Prenom'] . " " . $_SESSION['Nom']; ?></a></li>
-          <li><a href="deconnexion.php">Se déconnecter</a></li>
-        <?php else: ?>
-          <!-- Si l'utilisateur n'est pas connecté -->
-          <li><a href="connexion.php">Connexion</a></li>
-          <li><a href="inscription.php">Inscription</a></li>
-        <?php endif; ?>
-      </ul>
-    </header>
+      <?php if (isset($_SESSION['Nom']) && isset($_SESSION['Prenom'])): ?>
+        <!-- Si l'utilisateur est connecté -->
+        <li><a href="#">Bienvenue, <?php echo $_SESSION['Prenom'] . " " . $_SESSION['Nom']; ?></a></li>
+        <li><a href="deconnexion.php">Se déconnecter</a></li>
+      <?php else: ?>
+        <!-- Si l'utilisateur n'est pas connecté -->
+        <li><a href="connexion.php">Connexion</a></li>
+        <li><a href="inscription.php">Inscription</a></li>
+      <?php endif; ?>
+    </ul>
+  </header>
 </body>
 
 </html>
