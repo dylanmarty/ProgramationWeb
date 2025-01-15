@@ -14,6 +14,21 @@
   </div>
   <div class="game-area" id="gameArea"></div>
 
+  <?php
+    include 'ConfigBaseDonnees.php';
+
+    // Connexion à la base de données
+    $conn = new mysqli($host, $username, $password, $dbname);
+
+    // Vérifier si la connexion est réussie
+    if ($conn->connect_error) {
+    die("Échec de connexion à la base de données : " . $conn->connect_error);
+  }
+        $req = $conn->prepare("SELECT AttrapeEtoile FROM MeilleursScore");
+        $req->execute();
+        $req->store_result();
+  ?>
+
   <script>
     let $gameArea = document.getElementById("gameArea")
     let $scoreDisplay = document.getElementById("score")

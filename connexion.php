@@ -2,7 +2,6 @@
 
 include 'ConfigBaseDonnees.php';
 
-// Démarrer la session
 session_start();
 
 // Connexion à la base de données
@@ -36,8 +35,6 @@ if (isset($_POST['valider'])) {
                 $_SESSION['Email'] = $user_email;
                 $_SESSION['Prenom'] = $prenom;
                 $_SESSION['Nom'] = $nom;
-
-                // Rediriger vers la page d'accueil
                 header("Location: index.php");
                 exit();
             } else {
@@ -53,7 +50,7 @@ if (isset($_POST['valider'])) {
     }
 }
 
-$conn->close();  // Fermeture de la connexion
+$conn->close(); 
 ?>
 
 <!DOCTYPE html>

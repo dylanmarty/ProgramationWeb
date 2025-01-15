@@ -10,13 +10,24 @@ body {
     border: 2px solid white;
   }
   .scoreboard {
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
     color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .score-change {
+    animation: pulse 0.5s;
   }
   #replayButton {
     display: none;
-    position: absolute;
-    bottom: 20px;
-    padding: 10px 20px;
+    position: fixed;
+    bottom: 5%;
+    left: 45%;
+    width: 10%;
     font-size: 18px;
     color: white;
     border: none;

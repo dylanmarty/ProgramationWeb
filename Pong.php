@@ -16,6 +16,22 @@
   <canvas id="pong" width="600" height="400"></canvas>
   <button id="replayButton">Rejouer</button>
 
+
+  <?php
+    include 'ConfigBaseDonnees.php';
+
+    // Connexion à la base de données
+    $conn = new mysqli($host, $username, $password, $dbname);
+
+    // Vérifier si la connexion est réussie
+    if ($conn->connect_error) {
+    die("Échec de connexion à la base de données : " . $conn->connect_error);
+  }
+        $req = $conn->prepare("SELECT Prenom, Pong from Utilisateurs INNER JOIN MeilleursScores on MeilleursScores.ID = Utilisateurs.ID ORDER BY Pong");
+        $req->execute();
+        $req->store_result();
+  ?>
+
   <script>
     const canvas = document.getElementById('pong');
     const ctx = canvas.getContext('2d');
