@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
-    <link rel="stylesheet" href="css/Memoire_carte.css">
+    <link rel="stylesheet" href="css/Memoire_Carte.css">
+    <?php
+     include 'BarreNavigation.php';  // Inclure la barre de navigation
+    ?>
 </head>
 
 <body>

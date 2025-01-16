@@ -1,11 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    background-color: #222;
+    display: relative;
     justify-content: center;
     align-items: center;
+    left : 50% ;
+    top : 50%; 
     height: 100vh;
 }
 .container {
@@ -29,7 +29,7 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 th {
-    background-color: #4CAF50;
+    background-color: gray;
     color: white;
 }
 tr:hover {

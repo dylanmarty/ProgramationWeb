@@ -25,8 +25,8 @@
     die("Échec de connexion à la base de données : " . $conn->connect_error);
   }
         $req = $conn->prepare("SELECT AttrapeEtoile FROM MeilleursScore");
-        $req->execute();
-        $req->store_result();
+   //     $req->execute();
+   //     $req->store_result();
   ?>
 
   <script>

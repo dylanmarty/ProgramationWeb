@@ -1,14 +1,10 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/Style.css" rel="stylesheet">
   <title>ENSIMgames</title>
 </head>
 
@@ -44,9 +40,12 @@ session_start();
     <h3>Memoire carte</h3>
     <img src="img/AttrapeEtoiles.png" alt="Image du jeu Attrape Etoiles">
     <p>Dans ce jeu, vous devez trouver toutes les paires de cartes identiques en les retournant deux par deux.</p>
-    <a href="Memoire_Carte.php" class="btn">Jouer à Memoire carte</a>-->
+    <a href="Memoire_Carte.php" class="btn">Jouer à Memoire carte</a>
+    -->
 
-    <div id="carousel" class="responsive"> <button id="prev" onclick="prevSlide()">&#10094;</button>
+    <div id="carousel" class="responsive"> 
+      <button id="prev" onclick="prevSlide()">&#10094;</button>
+      <button id="next" onclick="nextSlide()">&#10095;</button>
       <div id="carousel-content responsive">
         <div class="carousel-item responsive">
           <h3>Attrape les Étoiles</h3> <img src="img/AttrapeEtoiles.png" alt="Image du jeu Attrape Etoiles" class="img">
@@ -60,7 +59,7 @@ session_start();
           <h3>Memoire carte</h3> <img src="img/memorycard.png" alt="Image du jeu Memory card" class="img">
           <p>Dans ce jeu, vous devez trouver toutes les paires de cartes identiques en les retournant deux par deux.</p> <a href="Memoire_Carte.php" class="btn">Jouer à Memoire carte</a>
         </div>
-      </div> <button id="next" onclick="nextSlide()">&#10095;</button>
+      </div>
     </div>
     <script type="text/javascript" src="js/caroussel.js"></script>
 
@@ -70,7 +69,7 @@ session_start();
   <section id="scores" class="section">
     <h2>Meilleurs Scores</h2>
     <p>Consultez les classements et essayez de battre les meilleurs joueurs !</p>
-    <a href="Meilleur_score.php" class="btn">Voir les Meilleurs Scores</a>
+    <a href="Meilleur_Score.php" class="btn">Voir les Meilleurs Scores</a>
   </section>
 </body>
 

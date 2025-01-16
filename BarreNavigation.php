@@ -1,5 +1,4 @@
 <?php
-// Vérifiez si la session est déjà démarrée
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
@@ -12,7 +11,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/BarreNavigation.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <title>ENSIMgames</title>
 </head>
@@ -21,19 +20,22 @@ if (session_status() == PHP_SESSION_NONE) {
   <!-- Menu de navigation -->
   <header class="navbar">
     <h1>ENSIMgames</h1>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <ul class="nav-links">
       <li><a href="index.php"><i class="fas fa-home"></i> Accueil</a></li>
       <!-- Menu déroulant pour les jeux -->
-      <li class="dropdown">
-        <a href="#" class="dropbtn"><i class="fas fa-gamepad"></i> Jeux</a>
-        <div class="dropdown-content">
-          <a href="AttrapeLesEtoiles.php">AttrapeLesEtoiles</a>
-          <a href="Pong.php">Pong</a>
+      <li>
+        <div class="dropdown">
+          <a class="dropbtn"><i class="fas fa-gamepad"></i> Jeux</a>
+          <div class="dropdown-content">
+            <a href="AttrapeLesEtoiles.php">AttrapeLesEtoiles</a>
+            <a href="Pong.php">Pong</a>
+            <a href="Memoire_Carte.php">Mémory</a>
+          </div>
+        </div>
       </li>
-      </div>
+
       </li>
-      <li><a href="Meilleur_score.php"><i class="fas fa-trophy"></i>Meilleurs Scores</a></li>
+      <li><a href="Meilleur_Score.php"><i class="fas fa-trophy"></i>Meilleurs Scores</a></li>
 
       <?php if (isset($_SESSION['Nom']) && isset($_SESSION['Prenom'])): ?>
         <!-- Si l'utilisateur est connecté -->

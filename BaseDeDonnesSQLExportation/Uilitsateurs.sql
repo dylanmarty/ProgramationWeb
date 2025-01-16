@@ -32,6 +32,7 @@ CREATE TABLE `MeilleursScores` (
   `ID` int(11) NOT NULL,
   `AttrapeEtoile` int(11) NOT NULL DEFAULT 0,
   `Pong` int(11) NOT NULL
+  `Memory` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

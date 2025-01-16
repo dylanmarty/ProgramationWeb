@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Meilleure_score.css">
-    <title>Meilleur score</title>
+    <link rel="stylesheet" href="css/Meilleur_Score.css">
+    <title>Meilleurs scores</title>
+    <?php
+        include 'BarreNavigation.php';
+    ?>
 </head>
 <body>
 <div class="container">
-    <h1>Meilleurs Scores</h1>
+    <h1>Meilleurs Scores Jeu du pong</h1>
     <table>
         <thead>
             <tr>
@@ -35,9 +38,9 @@
                 $rank = 1; // Variable pour le classement
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $rank++ . "</td>";  // Afficher le rang
-                    echo "<td>" . htmlspecialchars($row["Prenom"]) . "</td>";  // Afficher le prénom de l'utilisateur
-                    echo "<td>" . htmlspecialchars($row["Pong"]) . "</td>";  // Afficher le score (Pong)
+                    echo "<td>" . $rank++ . "</td>"; 
+                    echo "<td>" . htmlspecialchars($row["Prenom"]) . "</td>"; 
+                    echo "<td>" . htmlspecialchars($row["Pong"]) . "</td>";  
                     echo "</tr>";
                 }
             } else {
