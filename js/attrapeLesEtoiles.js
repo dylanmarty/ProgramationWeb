@@ -18,14 +18,35 @@ function mettreAJourTableau() {
   }, $tempsIntervalle);
 }
 
+function ajusterPositionEtoile($x, $y, etoileSize, gameAreaRect) {
+  if ($x < 0) $x = 0;
+  if ($y < 0) $y = 0;
+  if ($x + etoileSize > gameAreaRect.width) $x = gameAreaRect.width - etoileSize;
+  if ($y + etoileSize > gameAreaRect.height) $y = gameAreaRect.height - etoileSize;
+  return { x: $x, y: $y };
+}
+
 function creerEtoile() {
+  const $gameArea = document.getElementById("gameArea");
+  const gameAreaRect = $gameArea.getBoundingClientRect();
+
   let $etoile = document.createElement("div");
   $etoile.classList.add("star");
-  let $x = Math.random() * (window.innerWidth - 50);
-  let $y = Math.random() * (window.innerHeight - 50);
-  $etoile.style.left = `${$x}px`;
-  $etoile.style.top = `${$y}px`;
+
+  const etoileSize = 50;
+  let $x = Math.random() * (gameAreaRect.width - etoileSize);
+  let $y = Math.random() * (gameAreaRect.height - etoileSize);
+
+  let { x: adjustedX, y: adjustedY } = ajusterPositionEtoile($x, $y, etoileSize, gameAreaRect);
+
+  console.log(`Position de l'étoile : X = ${adjustedX}, Y = ${adjustedY}`);  // Vérification dans la console
+
+  $etoile.style.position = "absolute";
+  $etoile.style.left = `${adjustedX}px`;
+  $etoile.style.top = `${adjustedY}px`;
+
   $gameArea.appendChild($etoile);
+
   $etoile.addEventListener("click", () => {
     $score++;
     mettreAJourTableau();
@@ -34,13 +55,14 @@ function creerEtoile() {
       augmenterVitesse();
     }
   });
+
   setTimeout(() => {
     if ($gameArea.contains($etoile)) {
       $etoile.remove();
       $vies--;
       mettreAJourTableau();
       if ($vies <= 0) {
-        envoyerScore('AttrapeEtoile');
+        envoyerScore("AttrapeEtoile");
         alert(`Jeu terminé ! Score final : ${$score}`);
         recommencerJeu();
       }

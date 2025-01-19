@@ -21,9 +21,10 @@
     </div>
     <div class="score">
         <span class="score_title"></span>
-        <span class="score_val"></span>
+        <span class="score_val" id="score"></span>
     </div>
     <script src="js/flappy_Bird.js"></script>
+    <script src="js/envoyerScore.js"></script>
 </body>
 
 </html>

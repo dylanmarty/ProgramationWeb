@@ -30,6 +30,9 @@ if (session_status() == PHP_SESSION_NONE) {
             <a href="AttrapeLesEtoiles.php">AttrapeLesEtoiles</a>
             <a href="Pong.php">Pong</a>
             <a href="Memoire_Carte.php">Mémory</a>
+            <a href="2048.php">2048</a>
+            <a href="Snake.php">Snake</a>
+            <a href="flappy_Bird.php">Flappy Bird</a> 
           </div>
         </div>
       </li>

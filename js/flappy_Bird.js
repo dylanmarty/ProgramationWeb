@@ -21,6 +21,7 @@ function demarer(e) {
             e.remove();
 
         });
+        envoyerScore('FlappyBird');
         img.style.display = 'block';
         bird.style.top = '40vh';
         game_state = 'Play';

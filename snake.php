@@ -29,6 +29,7 @@
         </div>
     </div>
     <script src="js/snake.js"></script>
+    <script src="js/envoyerScore.js"></script>
 </body>
 
 </html>

@@ -23,6 +23,7 @@
     <div id="board"></div>
     <h2>Score: <span id="score">0</span></h2>
     <script src="js/2048.js"></script>
+    <script src="js/envoyerScore.js"></script>
 </body>
 
 </html>

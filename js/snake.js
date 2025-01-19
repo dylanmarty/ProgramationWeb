@@ -33,6 +33,7 @@ function demarrer(e) {
         velocityX = 0;
         velocityY = 0;
         snakeBody = [];
+        envoyerScore('Snake');
         score = 0;
 
         document.getElementById("score").innerText = score;
