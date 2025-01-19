@@ -15,38 +15,38 @@
                 <th>Score</th>
             </tr>
         </thead>
-        <tbody>
-            <?php
-            include 'ConfigBaseDonnees.php';
+        <tbody></tbody>
+        <?php
+        include 'ConfigBaseDonnees.php';
 
-            // Connexion à la base de données
-            $conn = new mysqli($host, $username, $password, $dbname);
+        // Connexion à la base de données
+        $conn = new mysqli($host, $username, $password, $dbname);
 
-            // Vérifier la connexion
-            if ($conn->connect_error) {
-                die("Échec de connexion à la base de données : " . $conn->connect_error);
+        // Vérifier la connexion
+        if ($conn->connect_error) {
+            die("Échec de connexion à la base de données : " . $conn->connect_error);
+        }
+
+        // Récupérer les meilleurs scores
+        $sql = "SELECT Prenom, `2048` FROM Utilisateurs INNER JOIN MeilleursScores ON MeilleursScores.ID = Utilisateurs.ID ORDER BY `2048` DESC LIMIT 5";
+        $resultat = $conn->query($sql);
+
+        if ($resultat->num_rows > 0) {
+            $rang = 1;
+            while ($ligne = $resultat->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $rang++ . "</td>";
+                echo "<td>" . htmlspecialchars($ligne["Prenom"]) . "</td>";
+                echo "<td>" . htmlspecialchars($ligne["2048"]) . "</td>";
+                echo "</tr>";
             }
+        } else {
+            echo "<tr><td colspan='3'>Aucun score trouvé</td></tr>";
+        }
 
-            // Récupérer les meilleurs scores
-            $sql = "SELECT Prenom, J_2048  FROM Utilisateurs INNER JOIN MeilleursScores ON MeilleursScores.ID = Utilisateurs.ID ORDER BY  J_2048 DESC LIMIT 5";
-            $resultat = $conn->query($sql);
-
-            if ($resultat->num_rows > 0) {
-                $rang = 1;
-                while ($ligne = $resultat->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $rang++ . "</td>";
-                    echo "<td>" . htmlspecialchars($ligne["Prenom"]) . "</td>";
-                    echo "<td>" . htmlspecialchars($ligne["J_2048"]) . "</td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='3'>Aucun score trouvé</td></tr>";
-            }
-
-            // Fermer la connexion à la base de données
-            $conn->close();
-            ?>
+        // Fermer la connexion à la base de données
+        $conn->close();
+        ?>
         </tbody>
     </table>
 </div>
