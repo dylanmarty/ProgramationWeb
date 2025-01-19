@@ -1,3 +1,6 @@
+<?php
+include 'cookies.php'; // Inclut le fichier PHP pour gérer les cookies
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -66,6 +69,20 @@
     <p>Consultez les classements et essayez de battre les meilleurs joueurs !</p>
     <a href="Meilleur_Score.php" class="btn">Voir les Meilleurs Scores</a>
   </section>
+  <footer>
+    <p>&copy; 2025 ENSIMGames Tous droits réservés.</p>
+  </footer>
+  <?php if (!isset($_SESSION['cookie_consent'])): ?>
+    <div id="cookie-consent">
+      <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site. Acceptez-vous l'utilisation de cookies ?</p>
+      <form method="post">
+        <button type="submit" name="accept">Accepter</button>
+        <button type="submit" name="reject">Refuser</button>
+      </form>
+    </div>
+  <?php else: ?>
+    <p>Votre choix concernant les cookies : <?php echo htmlspecialchars($_SESSION['cookie_consent']); ?></p>
+  <?php endif; ?>
 </body>
 
 </html>
