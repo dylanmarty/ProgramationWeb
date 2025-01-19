@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/MeilleurScores.css">
     <title>Meilleurs Scores</title>
-    <?php include 'BarreNavigation.php'; ?>
+    <?php
+    include 'php/BarreNavigation.php';  // Inclure la barre de navigation
+    ?>
 </head>
 <body>
     <div class="grid-container">
@@ -33,7 +35,7 @@
                 <h1 class="tab">Jeu du Snake</h1>
                 <table>
                     <tbody>
-                        <?php include 'TableauScoresnake.php'; ?>
+                        <?php include 'php/TableauScoresnake.php'; ?>
                     </tbody>
                 </table>
             </div>
@@ -45,7 +47,7 @@
                 <h1 class="tab">Jeu du 2048</h1>
                 <table>
                     <tbody>
-                        <?php include 'TableauScore2048.php'; ?>
+                        <?php include 'php/TableauScore2048.php'; ?>
                     </tbody>
                 </table>
             </div>
@@ -54,11 +56,14 @@
                 <h1 class="tab">Jeu du Flappy Bird</h1>
                 <table>
                     <tbody>
-                        <?php include 'TableauScoreflappy_bird.php'; ?>
+                        <?php include 'php/TableauScoreflappy_bird.php'; ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    <?php
+  include 'php/PiedPage.php';  // Inclure la barre de navigation
+  ?>
 </body>
 </html>

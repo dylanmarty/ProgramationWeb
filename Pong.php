@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/Pong.css" rel="stylesheet">
   <title>Jeu du Pong</title>
-  <?php include 'BarreNavigation.php'; ?>
+  <?php
+    include 'php/BarreNavigation.php';  // Inclure la barre de navigation
+    ?>
 </head>
 
 <body>
@@ -23,6 +25,9 @@
 
   <script src="js/pong.js"></script>
   <script src="js/envoyerScore.js"></script>
+  <?php
+  include 'php/PiedPage.php';  // Inclure la barre de navigation
+  ?>
 
 </body>
 

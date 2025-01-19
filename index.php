@@ -1,5 +1,5 @@
 <?php
-include 'cookies.php'; // Inclut le fichier PHP pour gérer les cookies
+include 'php/cookies.php'; // Inclut le fichier PHP pour gérer les cookies
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,9 +13,9 @@ include 'cookies.php'; // Inclut le fichier PHP pour gérer les cookies
 
 <body>
 
-  <?php
-  include 'BarreNavigation.php';  // Inclure la barre de navigation
-  ?>
+<?php
+    include 'php/BarreNavigation.php';  // Inclure la barre de navigation
+    ?>
 
   <!-- Section Accueil -->
   <section id="accueil" class="section">
@@ -43,19 +43,19 @@ include 'cookies.php'; // Inclut le fichier PHP pour gérer les cookies
         </div>
         <div class="carousel-item responsive">
           <h3>Snake</h3> <img src="img/snake_pre.png" alt="Image du jeu snake" class="img">
-          <p>Dans ce jeu, vous devez faire grandir le serpent le plus possible sans qu'il ne touche les murs ou sa propre queue en mangeant des objets</p> <a href="snake.php" class="btn">Jouer à Memoire carte</a>
+          <p>Dans ce jeu, vous devez faire grandir le serpent le plus possible sans qu'il ne touche les murs ou sa propre queue en mangeant des objets</p> <a href="snake.php" class="btn">Jouer à Snake</a>
         </div>
         <div class="carousel-item responsive">
           <h3>Flappy Bird</h3> <img src="img/flappy.png" alt="Image du jeu flappy bird" class="img">
-          <p>Dans ce jeu, le but est de contrôler un oiseau qui doit voler entre des tuyaux sans les toucher.</p> <a href="flappy_Bird.php" class="btn">Jouer à Memoire carte</a>
+          <p>Dans ce jeu, le but est de contrôler un oiseau qui doit voler entre des tuyaux sans les toucher.</p> <a href="flappy_Bird.php" class="btn">Jouer à Flappy Bird</a>
         </div>
         <div class="carousel-item responsive">
           <h3>Memoire carte</h3> <img src="img/memorycard.png" alt="Image du jeu Memory card" class="img">
-          <p>Dans ce jeu, vous devez combiner des tuiles numérotées pour atteindre la tuile 2048. Chaque mouvement combine les tuiles de même valeur, doublant ainsi leur valeur</p> <a href="Memoire_Carte.php" class="btn">Jouer à Memoire carte</a>
+          <p>Dans ce jeu, vous devez trouver toutes les paires de cartes identiques en les retournant deux par deux.</p> <a href="Memoire_Carte.php" class="btn">Jouer au Memory Card</a>
         </div>
         <div class="carousel-item responsive">
           <h3>2048</h3> <img src="img/2048.png" alt="Image du jeu 2048" class="img">
-          <p>Dans ce jeu, vous devez trouver toutes les paires de cartes identiques en les retournant deux par deux.</p> <a href="2048.php" class="btn">Jouer à Memoire carte</a>
+          <p>Dans ce jeu, vous devez combiner des tuiles numérotées pour atteindre la tuile 2048. Chaque mouvement combine les tuiles de même valeur, doublant ainsi leur valeur</p> <a href="2048.php" class="btn">Jouer au 2048</a>
         </div>
       </div>
     </div>
@@ -69,20 +69,21 @@ include 'cookies.php'; // Inclut le fichier PHP pour gérer les cookies
     <p>Consultez les classements et essayez de battre les meilleurs joueurs !</p>
     <a href="Meilleur_Score.php" class="btn">Voir les Meilleurs Scores</a>
   </section>
-  <footer>
-    <p>&copy; 2025 ENSIMGames Tous droits réservés.</p>
-  </footer>
-  <?php if (!isset($_SESSION['cookie_consent'])): ?>
-    <div id="cookie-consent">
-      <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site. Acceptez-vous l'utilisation de cookies ?</p>
-      <form method="post">
-        <button type="submit" name="accept">Accepter</button>
-        <button type="submit" name="reject">Refuser</button>
-      </form>
+
+  <?php
+  include 'php/PiedPage.php';  // Inclure la barre de navigation
+  ?>
+
+  <?php if ($showCookieBanner): ?>
+    <div id="cookie-consent" style="display:block;">
+        <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site. Acceptez-vous l'utilisation de cookies ?</p>
+        <form method="post">
+            <button type="submit" name="accept">Accepter</button>
+            <button type="submit" name="reject">Refuser</button>
+        </form>
     </div>
-  <?php else: ?>
-    <p>Votre choix concernant les cookies : <?php echo htmlspecialchars($_SESSION['cookie_consent']); ?></p>
   <?php endif; ?>
+
 </body>
 
 </html>

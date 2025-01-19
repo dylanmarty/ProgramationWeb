@@ -8,7 +8,7 @@
     <link rel="icon" type="img/png" href="img/favicon.ico">
     <title>Flappy Bird</title>
     <?php
-    include 'BarreNavigation.php';  // Inclure la barre de navigation
+    include 'php/BarreNavigation.php';  // Inclure la barre de navigation
     ?>
 </head>
 
@@ -25,6 +25,10 @@
     </div>
     <script src="js/flappy_Bird.js"></script>
     <script src="js/envoyerScore.js"></script>
+
+    <?php
+  include 'php/PiedPage.php';  // Inclure la barre de navigation
+  ?>
 </body>
 
 </html>

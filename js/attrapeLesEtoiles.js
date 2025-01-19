@@ -39,8 +39,8 @@ function creerEtoile() {
 
   let { x: adjustedX, y: adjustedY } = ajusterPositionEtoile($x, $y, etoileSize, gameAreaRect);
 
-  console.log(`Position de l'étoile : X = ${adjustedX}, Y = ${adjustedY}`);  // Vérification dans la console
-
+  console.log(`Position de l'étoile : X = ${adjustedX}, Y = ${adjustedY}`);  
+  
   $etoile.style.position = "absolute";
   $etoile.style.left = `${adjustedX}px`;
   $etoile.style.top = `${adjustedY}px`;

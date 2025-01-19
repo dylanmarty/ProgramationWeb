@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="img/png" href="img/jeu-de-plateau.png">
     <?php
-    include 'BarreNavigation.php';  // Inclure la barre de navigation
+    include 'php/BarreNavigation.php';  // Inclure la barre de navigation
     ?>
 </head>
 
@@ -24,6 +24,10 @@
     <h2>Score: <span id="score">0</span></h2>
     <script src="js/2048.js"></script>
     <script src="js/envoyerScore.js"></script>
+
+    <?php
+  include 'php/PiedPage.php';  // Inclure la barre de navigation
+  ?>
 </body>
 
 </html>

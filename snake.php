@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="CSS/snake.css">
     <link rel="icon" type="img/png" href="img/snake.jpg">
     <?php
-    include 'BarreNavigation.php';  // Inclure la barre de navigation
+    include 'php/BarreNavigation.php';  // Inclure la barre de navigation
     ?>
 </head>
 
@@ -30,6 +30,9 @@
     </div>
     <script src="js/snake.js"></script>
     <script src="js/envoyerScore.js"></script>
+    <?php
+  include 'php/PiedPage.php';  // Inclure la barre de navigation
+  ?>
 </body>
 
 </html>
