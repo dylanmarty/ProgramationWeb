@@ -43,7 +43,7 @@
     <a href="Memoire_Carte.php" class="btn">Jouer à Memoire carte</a>
     -->
 
-    <div id="carousel" class="responsive"> 
+    <div id="carousel" class="responsive">
       <button id="prev" onclick="prevSlide()">&#10094;</button>
       <button id="next" onclick="nextSlide()">&#10095;</button>
       <div id="carousel-content responsive">
@@ -56,8 +56,20 @@
           <p>Un jeu classique ! Utilisez votre raquette pour renvoyer la balle et marquer des points. Le jeu devient plus difficile à mesure que vous progressez. Évitez de laisser la balle passer !</p> <a href="Pong.php" class="btn">Jouer au Pong</a>
         </div>
         <div class="carousel-item responsive">
+          <h3>Snake</h3> <img src="img/snake_pre.png" alt="Image du jeu snake" class="img">
+          <p>Dans ce jeu, vous devez faire grandir le serpent le plus possible sans qu'il ne touche les murs ou sa propre queue en mangeant des objets</p> <a href="snake.php" class="btn">Jouer à Memoire carte</a>
+        </div>
+        <div class="carousel-item responsive">
+          <h3>Flappy Bird</h3> <img src="img/flappy.png" alt="Image du jeu flappy bird" class="img">
+          <p>Dans ce jeu, le but est de contrôler un oiseau qui doit voler entre des tuyaux sans les toucher.</p> <a href="flappy_Bird.php" class="btn">Jouer à Memoire carte</a>
+        </div>
+        <div class="carousel-item responsive">
           <h3>Memoire carte</h3> <img src="img/memorycard.png" alt="Image du jeu Memory card" class="img">
-          <p>Dans ce jeu, vous devez trouver toutes les paires de cartes identiques en les retournant deux par deux.</p> <a href="Memoire_Carte.php" class="btn">Jouer à Memoire carte</a>
+          <p>Dans ce jeu, vous devez combiner des tuiles numérotées pour atteindre la tuile 2048. Chaque mouvement combine les tuiles de même valeur, doublant ainsi leur valeur</p> <a href="Memoire_Carte.php" class="btn">Jouer à Memoire carte</a>
+        </div>
+        <div class="carousel-item responsive">
+          <h3>2048</h3> <img src="img/2048.png" alt="Image du jeu 2048" class="img">
+          <p>Dans ce jeu, vous devez trouver toutes les paires de cartes identiques en les retournant deux par deux.</p> <a href="2048.php" class="btn">Jouer à Memoire carte</a>
         </div>
       </div>
     </div>
