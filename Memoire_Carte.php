@@ -7,7 +7,7 @@
     <title>Memory Game</title>
     <link rel="stylesheet" href="css/Memoire_Carte.css">
     <?php
-    include 'BarreNavigation.php';  // Inclure la barre de navigation
+    include 'php/BarreNavigation.php';  // Inclure la barre de navigation
     ?>
 </head>
 
@@ -35,6 +35,9 @@
         </div>
 
         <script src="js/MemoryCard.js"></script>
+        <?php
+  include 'php/PiedPage.php';  // Inclure la barre de navigation
+  ?>
 </body>
 
 </html>

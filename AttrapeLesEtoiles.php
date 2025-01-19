@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/AttrapeLesEtoiles.css" rel="stylesheet">
   <title>Attrape les Étoiles</title>
-  <?php include 'BarreNavigation.php'; ?>
+  <?php
+    include 'php/BarreNavigation.php';  // Inclure la barre de navigation
+    ?>
 </head>
 
 <body>
@@ -18,6 +20,10 @@
     <?php include 'TableauScoreAttrapeEtoiles.php'; ?>
   </div>
 
+  <?php
+  include 'php/PiedPage.php';  // Inclure la barre de navigation
+  ?>
+  
   <script src="js/attrapeLesEtoiles.js"></script>
   <script src="js/envoyerScore.js"></script>
 </body>

@@ -30,6 +30,13 @@ if (isset($_POST['valider'])) {
                 $insertion = $conn->prepare("INSERT INTO Utilisateurs(Nom,Prenom,Email,MotDePasse) VALUES(?,?,?,?)");
                 $insertion->bind_param("ssss",$nom, $prenom, $email, $mdp);
                 $insertion->execute();
+
+                $user_id = $conn->insert_id;
+
+                $insertion_scores = $conn->prepare("INSERT INTO `meilleursscores`(`ID`, `AttrapeEtoile`, `Pong`, `2048`, `FlappyBird`, `Snake`) VALUES(?, 0, 0, 0, 0, 0)");
+                $insertion_scores->bind_param("i", $user_id); // L'ID de l'utilisateur
+                $insertion_scores->execute();
+
                 $message = "Votre compte a bien été crée";
             } else {
                 echo "Désolé mais cette adresse est associé à un compte existant";
@@ -58,7 +65,7 @@ $connexion = null;
 
 
     <?php
-        include 'BarreNavigation.php';
+    include 'php/BarreNavigation.php';  // Inclure la barre de navigation
     ?>
 </head>
 
@@ -109,9 +116,6 @@ $connexion = null;
                                 ?>
                             </i>
                         </p>
-                        <p class="text-center text-muted mt-3">
-                            En cliquant sur S’inscrire, vous acceptez nos <a href="#"> Conditions générales</a>, notre <a href=""> Politique de confidentialité </a> et notre <a href="#"> Politique d’utilisation</a> des cookies.
-                        </p>
                         <p class="text-center">
                             Avez vous déjà un compte ?<a href="connexion.php"> Connexion </a>
                         </p>
@@ -122,6 +126,9 @@ $connexion = null;
         </div>
     </div>
 
+    <?php
+  include 'php/PiedPage.php';  // Inclure la barre de navigation
+  ?>
 </body>
 
 </html>

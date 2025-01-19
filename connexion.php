@@ -66,7 +66,9 @@ $conn->close();
 </head>
 
 <body class="bg-light">
-    <?php include 'BarreNavigation.php'; ?>
+<?php
+    include 'php/BarreNavigation.php';  // Inclure la barre de navigation
+    ?>
 
     <div class="container">
         <div class="row mt-5">
@@ -110,6 +112,9 @@ $conn->close();
         </div>
     </div>
 
+    <?php
+  include 'php/PiedPage.php';  // Inclure la barre de navigation
+  ?>
 </body>
 
 </html>

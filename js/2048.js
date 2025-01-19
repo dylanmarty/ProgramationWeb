@@ -74,9 +74,8 @@ function undo() {
 function resetGame() {
     // Réinitialise le jeu
     board = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
-    envoyerScore("2048");
-    score = 0;
-    updateBoard();
+    envoyerScore('2048');
+    score = 0; updateBoard();
     setTwo();
     setTwo();
     document.getElementById("score").innerText = score;

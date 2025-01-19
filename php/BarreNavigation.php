@@ -43,7 +43,7 @@ if (session_status() == PHP_SESSION_NONE) {
       <?php if (isset($_SESSION['Nom']) && isset($_SESSION['Prenom'])): ?>
         <!-- Si l'utilisateur est connecté -->
         <li><a href="#"><i class="fas fa-user"></i>Bienvenue, <?php echo $_SESSION['Prenom'] . " " . $_SESSION['Nom']; ?></a></li>
-        <li><a href="deconnexion.php">Se déconnecter</a></li>
+        <li><a href="php/deconnexion.php">Se déconnecter</a></li>
       <?php else: ?>
         <!-- Si l'utilisateur n'est pas connecté -->
         <li><a href="connexion.php"><i class="fas fa-sign-in-alt"></i>Connexion</a></li>
