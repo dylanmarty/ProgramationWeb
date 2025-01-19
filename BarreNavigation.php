@@ -35,7 +35,7 @@ if (session_status() == PHP_SESSION_NONE) {
       </li>
 
       </li>
-      <li><a href="Meilleur_Score.php"><i class="fas fa-trophy"></i>Meilleurs Scores</a></li>
+      <li><a href="MeilleurScores.php"><i class="fas fa-trophy"></i>Meilleurs Scores</a></li>
 
       <?php if (isset($_SESSION['Nom']) && isset($_SESSION['Prenom'])): ?>
         <!-- Si l'utilisateur est connecté -->
