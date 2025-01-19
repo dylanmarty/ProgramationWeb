@@ -1,30 +1,39 @@
+/* Conteneur principal */
 body {
     font-family: Arial, sans-serif;
     background-color: #222;
     margin: 0;
-    height: 100vh;
+    padding: 20px;
+}
+
+/* Conteneur global */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     position: relative;
 }
 
-.container {
+/* Chaque jeu est dans un bloc */
+.game {
     background-color: #fff;
     border-radius: 8px;
-    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    width: 35%;
 }
 
+/* Nom des jeux */
 .tab {
     text-align: center;
     color: #333;
 }
 
+/* Tableau de scores */
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 th, td {
@@ -38,34 +47,63 @@ th {
     color: white;
 }
 
-#pong {
-    left: 10%;
+#pong{
+    width: 25%;
+    height: 25%;
+    left: 2.5%;
+    top: 15%;
 }
 
-#attrapeEtoile {
-    right: 10%;
+#attrapeEtoile{
+    width: 25%;
+    height: 25%;
+    left: 37.5%;
+    top: 15%;
 }
 
-@media (max-width: 768px) {
-    body {
-        display: relative;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
+#snake{
+    width: 25%;
+    height: 25%;
+    left: 72.5%;
+    top: 15%;
+}
 
+#j_2048{
+    width: 25%;
+    height: 25%;
+    left: 20%;
+    top: 50%;
+}
+
+#flappy_Bird{
+    width: 25%;
+    height: 25%;
+    left: 55%;
+    top: 50%;
+}
+
+/* Disposition sur grand écran */
+@media (min-width: 768px) {
     .container {
-        width: 90%;
-        top: 0%;
-        transform: none;
         position: relative;
     }
 
-    #pong, #attrapeEtoile {
-        left: 0;
-        right: 0;
-        position: relative;
+    .game {
+        width: 48%;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 4%;
+    }
+
+    .game:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+
+/* Disposition sur mobile */
+@media (max-width: 768px) {
+    .game {
+        width: 100%;
         margin-bottom: 20px;
     }
 }
