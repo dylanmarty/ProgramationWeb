@@ -19,7 +19,7 @@
         Entrer pour commencer le jeu <p><span style="color: red;">&uarr;</span>Flêche haut pour controler</p>
 
     </div>
-    <div class="score">
+    <div class="score scoreboard ">
         <span class="score_title"></span>
         <span class="score_val" id="score"></span>
     </div>
@@ -27,8 +27,8 @@
     <script src="js/envoyerScore.js"></script>
 
     <?php
-  include 'php/PiedPage.php';  // Inclure la barre de navigation
-  ?>
+    include 'php/PiedPage.php';  // Inclure la barre de navigation
+    ?>
 </body>
 
 </html>

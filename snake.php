@@ -31,8 +31,8 @@
     <script src="js/snake.js"></script>
     <script src="js/envoyerScore.js"></script>
     <?php
-  include 'php/PiedPage.php';  // Inclure la barre de navigation
-  ?>
+    include 'php/PiedPage.php';  // Inclure la barre de navigation
+    ?>
 </body>
 
 </html>

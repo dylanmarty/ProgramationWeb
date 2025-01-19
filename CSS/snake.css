@@ -20,6 +20,11 @@ body {
     text-align: center;
 }
 
+
+.score-change {
+    animation: pulse 0.5s;
+}
+
 .message {
     position: absolute;
     z-index: 10;

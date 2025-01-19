@@ -3,4 +3,4 @@
 $host = "localhost"; // ou l'adresse du serveur de la base de données
 $dbname = "jeux_videos";
 $username = "root";
-$password = "toto";
+$password = "";

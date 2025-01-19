@@ -65,6 +65,25 @@
     margin: 10px;
 }
 
+.scoreboard {
+    position: relative;
+    left: 45%;
+    width: 10%;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    line-height: 24px;
+}
+
+.score-change {
+    animation: pulse 0.5s;
+}
+
 .score_val {
     color: gold;
     font-weight: bold;

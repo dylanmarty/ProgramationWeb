@@ -1,20 +1,19 @@
 /* Style pour le menu déroulant */
+/* Styles pour le menu déroulant */
 .dropdown-content {
-  display: none; /* Par défaut, la liste est cachée */
+  display: none;
   position: absolute;
   min-width: 160px;
-  z-index: 10; /* Applique un z-index plus élevé pour s'assurer qu'il se superpose */
-  background-color: #333; /* Assure une couleur de fond pour la liste */
-  border-radius: 4px; /* Ajoute des bords arrondis pour le menu déroulant */
-  top: 100%; /* Aligne le menu en dessous de l'élément parent */
+  background-color: #333;
+  border-radius: 4px;
+  top: 100%;
   left: 0;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block; /* Affiche la liste au survol */
+  display: block;
 }
 
-/* Décalage du menu déroulant à gauche pour ne pas chevaucher les autres éléments */
 .dropdown {
   position: relative;
 }
@@ -22,33 +21,32 @@
 /* Styles pour les petits écrans */
 @media (max-width: 768px) {
   .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .nav-links {
-      flex-direction: column;
-      width: 100%;
-      display: none;
+    flex-direction: column;
+    width: 100%;
+    display: none;
   }
 
   .nav-links.active {
-      display: flex;
+    display: flex;
   }
 
   .nav-links li {
-      margin: 10px 0;
+    margin: 10px 0;
   }
 
   .menu-icon {
-      display: block;
+    display: block;
   }
 
-  /* Empêche les éléments de se chevaucher sur les petits écrans */
   .dropdown-content {
-      position: relative;
-      top: auto;
-      left: auto;
+    position: relative;
+    top: auto;
+    left: auto;
   }
 }
 
@@ -84,4 +82,61 @@
 
 .nav-links a:hover {
   text-decoration: underline;
+}
+
+.vertical-nav {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  background-color: #333;
+  padding-top: 20px;
+  transition: width 0.3s;
+  overflow: hidden;
+}
+
+.vertical-nav.expanded {
+  width: 200px;
+}
+
+.vertical-nav a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.vertical-nav a i {
+  margin-right: 10px;
+}
+
+.vertical-nav a span {
+  display: none;
+}
+
+.vertical-nav.expanded a span {
+  display: inline;
+}
+
+.vertical-nav.active {
+  display: block;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.vertical-nav.active {
+  display: none;
 }
