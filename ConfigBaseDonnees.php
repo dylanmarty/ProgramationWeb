@@ -4,4 +4,8 @@ $host = "localhost"; // ou l'adresse du serveur de la base de données
 $dbname = "e2405469";
 $username = "e2405469";
 $password = "Evd593tt";
-?> 
+
+$host = "localhost"; // ou l'adresse du serveur de la base de données
+$dbname = "jeux_videos";
+$username = "root";
+$password = "";
