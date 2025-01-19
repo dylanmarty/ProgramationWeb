@@ -13,8 +13,10 @@
 
 <body>
     <div id="game-info">
-        <div id="timer">Temps restant : 50s</div>
-        <div id="score">Score : 0</div>
+        <div class="scoreboard">
+            <div id="timer">Temps restant : 50s</div>
+            <div id="score">Score : 0</div>
+        </div>
         <div id="game-board">
             <div class="card" data-card="img/operateur.png"></div>
             <div class="card" data-card="img/grue.png"></div>
@@ -36,8 +38,8 @@
 
         <script src="js/MemoryCard.js"></script>
         <?php
-  include 'php/PiedPage.php';  // Inclure la barre de navigation
-  ?>
+        include 'php/PiedPage.php';  // Inclure la barre de navigation
+        ?>
 </body>
 
 </html>
