@@ -4,7 +4,6 @@ let bird = document.querySelector('.bird');
 let img = document.getElementById('bird-1');
 
 let bird_props = bird.getBoundingClientRect();
-
 let background = document.querySelector('.background').getBoundingClientRect();
 let score_val = document.querySelector('.score_val');
 let message = document.querySelector('.message');
@@ -14,12 +13,11 @@ let game_state = 'Start';
 img.style.display = 'none';
 message.classList.add('messageStyle');
 
-//Demarrer le jeu
+// Démarrer le jeu
 function demarer(e) {
-    if (e.key == "Enter" && game_state != 'Play') {
+    if ((e.key == "Enter" || e.type == "touchstart") && game_state != 'Play') {
         document.querySelectorAll('.pipe_sprite').forEach((e) => {
             e.remove();
-
         });
         envoyerScore('FlappyBird');
         img.style.display = 'block';
@@ -32,17 +30,17 @@ function demarer(e) {
         play();
     }
 }
+
+// Ajoute les écouteurs d'événements pour démarrer le jeu
 document.addEventListener('keydown', (e) => {
     demarer(e);
-
 });
 document.addEventListener('touchstart', (e) => {
     demarer(e);
-
 });
 
 function play() {
-    //Mouvement de l'oiseau
+    // Mouvement de l'oiseau
     function move() {
         if (game_state != 'Play') return;
 
@@ -51,18 +49,19 @@ function play() {
             let pipe_sprite_props = element.getBoundingClientRect();
             bird_props = bird.getBoundingClientRect();
 
+            // Supprime les tuyaux qui sortent de l'écran
             if (pipe_sprite_props.right <= 0) {
                 element.remove();
-            }
-            else {
+            } else {
+                // Vérifie les collisions entre l'oiseau et les tuyaux
                 if (bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width && bird_props.left + bird_props.width > pipe_sprite_props.left && bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height && bird_props.top + bird_props.height > pipe_sprite_props.top) {
                     game_state = 'End';
                     message.innerHTML = 'Game Over'.fontcolor('red') + '<br>Appuyer sur Entrer pour Recommencer';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
                     return;
-                }
-                else {
+                } else {
+                    // Augmente le score lorsque l'oiseau passe un tuyau
                     if (pipe_sprite_props.right < bird_props.left && pipe_sprite_props.right + move_speed >= bird_props.left && element.increase_score == '1') {
                         score_val.innerHTML = +score_val.innerHTML + 1;
                     }
@@ -75,11 +74,12 @@ function play() {
     requestAnimationFrame(move);
 
     let bird_dy = 0;
-    //Appliquer la gravité à l'oiseau
+    // Appliquer la gravité à l'oiseau
     function apply_gravity() {
-
         if (game_state != 'Play') return;
         bird_dy = bird_dy + gravity;
+
+        // Écouteurs d'événements pour le contrôle de l'oiseau
         document.addEventListener('keydown', (e) => {
             if (e.key == 'ArrowUp' || e.key == ' ') {
                 img.src = 'img/Bird-2.png';
@@ -102,6 +102,7 @@ function play() {
             img.src = 'img/Bird.png';
         });
 
+        // Vérifie si l'oiseau touche le haut ou le bas de l'écran
         if (bird_props.top <= 0 || bird_props.bottom >= background.bottom) {
             game_state = 'End';
             message.style.left = '28vw';
@@ -116,9 +117,9 @@ function play() {
     requestAnimationFrame(apply_gravity);
 
     let pipe_separation = 0;
-    let pipe_gap = 40;//ecart entre deux tuyaux en hauteur
+    let pipe_gap = 40; // Écart entre deux tuyaux en hauteur
 
-    //Creation des tuyaux
+    // Création des tuyaux
     function create_pipe() {
         if (game_state != 'Play') return;
 
