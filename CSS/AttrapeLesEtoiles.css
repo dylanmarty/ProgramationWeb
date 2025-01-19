@@ -9,6 +9,7 @@ body {
   width: 800px;
   height: 600px;
   border: 2px solid white;
+  background-color: black;
   overflow: hidden; /* Empêche les étoiles de déborder */
 }
 

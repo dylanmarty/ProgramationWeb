@@ -8,6 +8,7 @@ body {
   }
   #pong {
     border: 2px solid white;
+    background-color: black;
     position: relative;
     margin: 0 auto;
     top: 10%;
