@@ -114,3 +114,58 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Cookie Banner style */
+.cookie-banner {
+  background-color: #222;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  position: fixed;
+  bottom: 80px;
+  width: 100%;
+  display: none;
+  z-index: 1000;
+}
+
+.cookie-banner a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.cookie-banner button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+  footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .cookie-banner {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
