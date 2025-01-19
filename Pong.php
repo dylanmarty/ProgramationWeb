@@ -16,20 +16,8 @@
   <canvas id="pong" width="600" height="400"></canvas>
   <button id="replayButton">Rejouer</button>
 
-
-  <?php
-    include 'ConfigBaseDonnees.php';
-
-    // Connexion à la base de données
-    $conn = new mysqli($host, $username, $password, $dbname);
-
-    // Vérifier si la connexion est réussie
-    if ($conn->connect_error) {
-    die("Échec de connexion à la base de données : " . $conn->connect_error);
-  }
-        $req = $conn->prepare("SELECT Prenom, Pong from Utilisateurs INNER JOIN MeilleursScores on MeilleursScores.ID = Utilisateurs.ID ORDER BY Pong");
-        $req->execute();
-        $req->store_result();
+  <?php 
+  include 'TableauScorePong.php'; 
   ?>
 
   <script>
@@ -46,11 +34,8 @@
     let ballSpeedX = 4, ballSpeedY = -4;
     let score = 0;
 
-    // Gestion des événements du clavier
     document.addEventListener('keydown', keyDownHandler, false);
     document.addEventListener('keyup', keyUpHandler, false);
-
-    // Clic sur "Rejouer"
     replayButton.addEventListener('click', resetGame);
 
     function keyDownHandler(e) {
@@ -123,10 +108,9 @@
     }
 
     function gameOver() {
-      // Supprimer la balle avant d'afficher le bouton "Rejouer"
-      ballX = -ballRadius; // Déplacer la balle hors de la zone visible
+      ballX = -ballRadius;
       ballY = -ballRadius;
-      replayButton.style.display = 'block'; // Afficher le bouton "Rejouer"
+      replayButton.style.display = 'block';
     }
 
     function resetGame() {
@@ -135,9 +119,9 @@
       ballY = canvas.height - 30;
       ballSpeedX = 4;
       ballSpeedY = -4;
-      paddleX = (canvas.width - paddleWidth) / 2; // Réinitialiser la position de la palette
-      replayButton.style.display = 'none'; // Cacher le bouton "Rejouer"
-      draw(); // Redémarrer le jeu
+      paddleX = (canvas.width - paddleWidth) / 2;
+      replayButton.style.display = 'none';
+      draw();
     }
 
     function draw() {
@@ -151,7 +135,7 @@
       requestAnimationFrame(draw);
     }
 
-    draw(); // Démarrer le jeu
+    draw();
   </script>
 
 </body>

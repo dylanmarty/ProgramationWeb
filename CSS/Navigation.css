@@ -1,0 +1,87 @@
+/* Style pour le menu déroulant */
+.dropdown-content {
+  display: none; /* Par défaut, la liste est cachée */
+  position: absolute;
+  min-width: 160px;
+  z-index: 10; /* Applique un z-index plus élevé pour s'assurer qu'il se superpose */
+  background-color: #333; /* Assure une couleur de fond pour la liste */
+  border-radius: 4px; /* Ajoute des bords arrondis pour le menu déroulant */
+  top: 100%; /* Aligne le menu en dessous de l'élément parent */
+  left: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Affiche la liste au survol */
+}
+
+/* Décalage du menu déroulant à gauche pour ne pas chevaucher les autres éléments */
+.dropdown {
+  position: relative;
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .nav-links li {
+      margin: 10px 0;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+
+  /* Empêche les éléments de se chevaucher sur les petits écrans */
+  .dropdown-content {
+      position: relative;
+      top: auto;
+      left: auto;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar h1 {
+  font-size: 24px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
