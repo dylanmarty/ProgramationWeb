@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/flappy_Bird.css">
+    <link rel="stylesheet" href="css/flappy_Bird.css">
     <link rel="icon" type="img/png" href="img/favicon.ico">
     <title>Flappy Bird</title>
     <?php

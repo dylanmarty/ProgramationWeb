@@ -33,7 +33,7 @@ if (isset($_POST['valider'])) {
 
                 $user_id = $conn->insert_id;
 
-                $insertion_scores = $conn->prepare("INSERT INTO `meilleursscores`(`ID`, `AttrapeEtoile`, `Pong`, `2048`, `FlappyBird`, `Snake`) VALUES(?, 0, 0, 0, 0, 0)");
+                $insertion_scores = $conn->prepare("INSERT INTO `MeilleursScores`(`ID`, `AttrapeEtoile`, `Pong`, `2048`, `FlappyBird`, `Snake`) VALUES(?, 0, 0, 0, 0, 0)");
                 $insertion_scores->bind_param("i", $user_id); // L'ID de l'utilisateur
                 $insertion_scores->execute();
 

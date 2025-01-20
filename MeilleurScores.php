@@ -56,7 +56,7 @@
                 <h1 class="tab">Jeu du Flappy Bird</h1>
                 <table>
                     <tbody>
-                        <?php include 'php/TableauScoreflappy_bird.php'; ?>
+                        <?php include 'php/TableauScoreflappy_Bird.php'; ?>
                     </tbody>
                 </table>
             </div>
